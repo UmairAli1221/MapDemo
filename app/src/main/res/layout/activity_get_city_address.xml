@@ -9,44 +9,56 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.gh.mapdemo.GetCityAddress">
-
-    <EditText
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="40dp"
-        android:id="@+id/satrtDate"
-        android:layout_alignParentEnd="true"
+        android:text="Enter Address"
+        android:id="@+id/addressTV"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:hint="latitude"
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/satrtDate"
-        android:layout_marginTop="32dp"
-        android:id="@+id/latitude"
-        android:textSize="20dp" />
+        android:text="Show Lat/Long"
+        android:id="@+id/addressButton"
+        android:layout_below="@+id/addressTV"
+        android:layout_toEndOf="@+id/addressTV"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/latLongTV"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/addressTV" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addressET"
+        android:singleLine="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/latLongTV" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/latLongTV"
+        android:layout_alignStart="@+id/latLongTV"
+        android:layout_marginTop="62dp"
+        android:id="@+id/latitude" />
 
     <Button
-        android:text="Convert"
+        android:text="Show Map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/latitude"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="98dp"
-        android:id="@+id/convert" />
-
-    <TextView
-        android:hint="longitude"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:id="@+id/longitude"
-        android:textSize="20dp"
-        android:layout_below="@+id/latitude"
-        android:layout_alignParentStart="true" />
+        android:layout_alignStart="@+id/latitude"
+        android:layout_marginTop="46dp"
+        android:id="@+id/GetMAp"
+        android:layout_alignEnd="@+id/addressButton" />
 </RelativeLayout>
